@@ -1,0 +1,2 @@
+#!/bin/bash
+tar zvcf dungeoneer-$(date +%Y%m%d).tar.gz *.cpp *.h CHANGES Makefile NOTES snap snoop STATUS

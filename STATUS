@@ -1,0 +1,45 @@
+2012-02-14 09:36
+
+You've mostly finished basic dungeon navigation and item handling.
+You've finished the food-eating UI.
+You've finished the character creation UI.
+You've finished potion use.
+You've finished all the scrolls that don't act on monsters.
+You've finished room- and passage-darkening.
+You've finished all the rings and necklaces that don't act on monsters.
+
+You're starting to redo the architecture such that player characters are a
+polymorphism of a basic Actor class that will include AI PCs and monsters.
+
+You're currently knee-deep in:
+DungeonLevel::play()
+DungeonLevel::runPlayer()
+DungeonLevel::stepPlayer()
+DungeonLevel::bamfPlayer()
+dungeon.cpp line 840
+
+Next steps:
+* Change "Rogue" class to "Actor", make way for polymorphism with monsters.
+* Add monsters!
+* Add handling of dungeon features.
+* Add handling for traps.
+** Dungeon features should be polymorphic derivatives of a base Feature class,
+   allowing each to have its own init() and interact() member functions.  The
+   interact() function will have to take a Rogue* argument so that it can, in
+   fact, interact with the player's data.
+** Candidates in order of importance:
+*** Downward Stairs (passable floor object)
+*** Upward Stairs (passable floor object)
+*** Analyticator (impassable floor/wall object)
+*** Transmutator (impassable floor/wall object)
+*** Fountain (impassable floor/wall object)
+*** Recombinator (impassable floor/wall object)
+*** Healing Altar (passable floor object)
+
+Things left for later:
+* DungeonLevel::redraw() - handling of secret doors.
+* MessageEngine::draw() - handling of big buffers.
+
+Things left for much later:
+* Support for multiple party members, where the player controls one member and
+  the others act according to a rudimentary AI.

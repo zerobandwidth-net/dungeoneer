@@ -1,0 +1,11 @@
+The following status flags from ROGUE will be implemented differently in DUNGEONEER:
+
+WAKENS, WANDERS, FLITS, CAN_FLIT, SEEKS_GOLD, STATIONARY
+  These are behavioral flags that will be defined in the Creature class.
+
+RUSTS, HOLDS, FREEZES, STEALS_GOLD, STEALS_ITEM, STINGS, DRAINS_LIFE,
+DROPS_LEVEL, CONFUSES, FLAMES
+  Defined as a flag on weapons.  Creatures will get natural weapons with these
+  characteristics.
+
+
